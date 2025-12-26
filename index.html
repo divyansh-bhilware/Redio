@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Redio — Voice First Social Media</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Redio is a voice-first social platform where people connect through audio, not visuals."/>
+  <meta name="theme-color" content="#e11d48"/>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --red: #e11d48;
+      --bg: #050505;
+      --card: #111;
+      --text: #ffffff;
+      --muted: #9ca3af;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #111 0%, #050505 45%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- HERO ---------- */
+    header {
+      padding: 100px 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 60px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(225,29,72,.15);
+      color: var(--red);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    h1 span {
+      color: var(--red);
+    }
+
+    .hero p {
+      margin-top: 20px;
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    .cta {
+      margin-top: 40px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 16px 28px;
+      border-radius: 14px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: .2s ease;
+      border: none;
+    }
+
+    .btn.primary {
+      background: var(--red);
+      color: #fff;
+    }
+
+    .btn.primary:hover {
+      opacity: .85;
+    }
+
+    .btn.secondary {
+      background: transparent;
+      border: 1px solid #333;
+      color: #fff;
+    }
+
+    .visual {
+      background: linear-gradient(145deg, #1a1a1a, #0b0b0b);
+      border-radius: 28px;
+      height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 30px 80px rgba(0,0,0,.6);
+    }
+
+    .visual span {
+      font-size: 120px;
+      color: var(--red);
+    }
+
+    /* ---------- SECTION ---------- */
+    section {
+      padding: 100px 0;
+    }
+
+    .center {
+      text-align: center;
+      max-width: 720px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+    }
+
+    section p {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    /* ---------- FEATURES ---------- */
+    .grid {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 32px;
+      border-radius: 20px;
+      border: 1px solid #1f1f1f;
+      transition: transform .2s ease, border .2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: var(--red);
+    }
+
+    .icon {
+      font-size: 36px;
+      margin-bottom: 16px;
+      color: var(--red);
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    /* ---------- WHY ---------- */
+    .split {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 60px;
+      align-items: center;
+    }
+
+    ul {
+      list-style: none;
+      margin-top: 30px;
+    }
+
+    ul li {
+      margin-bottom: 14px;
+      font-size: 18px;
+    }
+
+    blockquote {
+      background: linear-gradient(145deg, #1a1a1a, #0b0b0b);
+      padding: 40px;
+      border-radius: 24px;
+      font-size: 22px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.5);
+    }
+
+    /* ---------- FINAL CTA ---------- */
+    .final {
+      text-align: center;
+      padding: 120px 24px;
+      background: radial-gradient(circle at center, #1a1a1a 0%, #050505 60%);
+    }
+
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+      border-top: 1px solid #1f1f1f;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 70px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- HERO -->
+    <header>
+      <div class="hero">
+        <div class="badge">Voice-First Social Media</div>
+        <h1>Social media.<br><span>Only your voice.</span></h1>
+        <p>
+          Redio is a voice-only social platform where people share thoughts,
+          stories, and conversations — without cameras, filters, or text.
+        </p>
+        <div class="cta">
+          <button class="btn primary">Join the Waitlist</button>
+          <button class="btn secondary">How it Works</button>
+        </div>
+      </div>
+
+      <div class="visual">
+        <span>🎙️</span>
+      </div>
+    </header>
+
+    <!-- PROBLEM -->
+    <section>
+      <div class="center">
+        <h2>The internet forgot how to listen</h2>
+        <p>
+          Social platforms reward performance, speed, and appearance.
+          Real expression gets lost. Redio slows things down —
+          bringing back emotion, tone, and human connection.
+        </p>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section>
+      <div class="grid">
+        <div class="card">
+          <div class="icon">🎤</div>
+          <h3>Record & Post</h3>
+          <p>Share short voice posts instantly. No typing. No visuals.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🎧</div>
+          <h3>Scroll & Listen</h3>
+          <p>A feed designed for listening, not skimming.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">💬</div>
+          <h3>Voice Replies</h3>
+          <p>Reply and react using your voice — conversations feel real again.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📻</div>
+          <h3>Subscribe</h3>
+          <p>Follow voices you resonate with, not faces you scroll past.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section>
+      <div class="split">
+        <div>
+          <h2>Why Redio?</h2>
+          <ul>
+            <li>• No pressure to look good</li>
+            <li>• No endless typing or editing</li>
+            <li>• More authenticity and nuance</li>
+            <li>• Built for thinkers, creators, and listeners</li>
+          </ul>
+        </div>
+
+        <blockquote>
+          “Redio feels like the early internet —
+          personal, raw, and human.”
+          <br><br>
+          <span style="color:#888;font-size:16px;">— Early concept feedback</span>
+        </blockquote>
+      </div>
+    </section>
+  </div>
+
+  <!-- FINAL CTA -->
+  <div class="final">
+    <h2>Be heard. Not seen.</h2>
+    <p style="max-width:600px;margin:20px auto;">
+      Redio is building the next generation of social —
+      slower, deeper, voice-led.
+    </p>
+    <button class="btn primary" style="margin-top:30px;">Get Early Access</button>
+  </div>
+
+  <footer>
+    © 2025 Redio — Voice First Social Media
+  </footer>
+
+</body>
+</html>
