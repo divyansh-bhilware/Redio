@@ -1,335 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Redio — Voice First Social Media</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Redio — Voice First Social Media</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Redio is a voice-first social platform where people connect through audio, not visuals."/>
-  <meta name="theme-color" content="#e11d48"/>
+<meta name="description" content="Redio is a voice-first social platform where people connect through audio, not visuals."/>
+<meta name="theme-color" content="#e11d48"/>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --red: #e11d48;
-      --bg: #050505;
-      --card: #111;
-      --text: #ffffff;
-      --muted: #9ca3af;
-    }
+<style>
+:root {
+  --red:#e11d48;
+  --bg:#050505;
+  --card:#111;
+  --text:#fff;
+  --muted:#9ca3af;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
+body{
+  background:radial-gradient(circle at top,#111 0%,#050505 45%);
+  color:var(--text);
+}
+.container{max-width:1200px;margin:auto;padding:0 24px}
 
-    body {
-      background: radial-gradient(circle at top, #111 0%, #050505 45%);
-      color: var(--text);
-      line-height: 1.6;
-    }
+/* ---------- HERO ---------- */
+header{
+  padding:100px 0;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:60px;
+  align-items:center;
+}
+.badge{
+  display:inline-block;
+  padding:6px 14px;
+  border-radius:999px;
+  background:rgba(225,29,72,.15);
+  color:var(--red);
+  font-size:14px;
+  margin-bottom:20px;
+}
+h1{
+  font-size:clamp(2.6rem,5vw,4rem);
+  font-weight:800;
+  line-height:1.1;
+}
+h1 span{color:var(--red)}
+.hero p{
+  margin-top:20px;
+  font-size:18px;
+  color:var(--muted);
+  max-width:520px;
+}
+.cta{margin-top:40px}
+.btn{
+  padding:16px 28px;
+  border-radius:14px;
+  font-weight:600;
+  font-size:16px;
+  cursor:pointer;
+  background:var(--red);
+  border:none;
+  color:#fff;
+}
+.btn:hover{opacity:.85}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+/* ---------- VOICE WAVE ---------- */
+.visual{
+  background:linear-gradient(145deg,#1a1a1a,#0b0b0b);
+  border-radius:28px;
+  height:360px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 30px 80px rgba(0,0,0,.6);
+}
+.wave{
+  display:flex;
+  gap:8px;
+}
+.bar{
+  width:10px;
+  height:60px;
+  background:var(--red);
+  border-radius:10px;
+  animation:wave 1.2s infinite ease-in-out;
+}
+.bar:nth-child(2){animation-delay:.1s}
+.bar:nth-child(3){animation-delay:.2s}
+.bar:nth-child(4){animation-delay:.3s}
+.bar:nth-child(5){animation-delay:.4s}
 
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 24px;
-    }
+@keyframes wave{
+  0%,100%{height:30px;opacity:.4}
+  50%{height:90px;opacity:1}
+}
 
-    /* ---------- HERO ---------- */
-    header {
-      padding: 100px 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 60px;
-      align-items: center;
-    }
+/* ---------- SECTIONS ---------- */
+section{padding:100px 0}
+.center{text-align:center;max-width:720px;margin:auto}
+h2{font-size:clamp(2rem,4vw,2.8rem);font-weight:700}
+section p{margin-top:20px;color:var(--muted);font-size:18px}
 
-    .badge {
-      display: inline-block;
-      padding: 6px 14px;
-      border-radius: 999px;
-      background: rgba(225,29,72,.15);
-      color: var(--red);
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
+/* ---------- FEATURES ---------- */
+.grid{
+  margin-top:60px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:24px;
+}
+.card{
+  background:var(--card);
+  padding:32px;
+  border-radius:20px;
+  border:1px solid #1f1f1f;
+  transition:.2s;
+}
+.card:hover{transform:translateY(-6px);border-color:var(--red)}
+.icon{font-size:36px;color:var(--red);margin-bottom:16px}
 
-    h1 {
-      font-size: clamp(2.6rem, 5vw, 4rem);
-      font-weight: 800;
-      line-height: 1.1;
-    }
+/* ---------- APP PREVIEW ---------- */
+.preview-grid{
+  margin-top:60px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:40px;
+}
+.phone{
+  background:#000;
+  border-radius:30px;
+  padding:18px;
+  box-shadow:0 20px 60px rgba(0,0,0,.7);
+}
+.screen{
+  background:linear-gradient(180deg,#1a1a1a,#050505);
+  border-radius:22px;
+  padding:24px;
+  height:420px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:20px;
+}
+.voice-pill{
+  background:#111;
+  padding:14px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.pulse{
+  width:10px;height:10px;border-radius:50%;
+  background:var(--red);
+  animation:pulse 1.5s infinite;
+}
+@keyframes pulse{
+  0%{transform:scale(1);opacity:1}
+  100%{transform:scale(2.5);opacity:0}
+}
 
-    h1 span {
-      color: var(--red);
-    }
+/* ---------- WHY ---------- */
+.split{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:60px;
+  align-items:center;
+}
+ul{list-style:none;margin-top:30px}
+ul li{margin-bottom:14px;font-size:18px}
+blockquote{
+  background:linear-gradient(145deg,#1a1a1a,#0b0b0b);
+  padding:40px;
+  border-radius:24px;
+  font-size:22px;
+}
 
-    .hero p {
-      margin-top: 20px;
-      font-size: 18px;
-      color: var(--muted);
-      max-width: 520px;
-    }
+/* ---------- MODAL ---------- */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+}
+.modal-box{
+  background:#111;
+  padding:40px;
+  border-radius:20px;
+  max-width:400px;
+  width:90%;
+  text-align:center;
+}
+.modal-box input{
+  width:100%;
+  margin-top:20px;
+  padding:14px;
+  border-radius:10px;
+  border:none;
+}
+.modal-box button{
+  margin-top:20px;
+  width:100%;
+}
+.close{
+  margin-top:14px;
+  color:#888;
+  cursor:pointer;
+}
 
-    .cta {
-      margin-top: 40px;
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 16px 28px;
-      border-radius: 14px;
-      font-weight: 600;
-      font-size: 16px;
-      cursor: pointer;
-      transition: .2s ease;
-      border: none;
-    }
-
-    .btn.primary {
-      background: var(--red);
-      color: #fff;
-    }
-
-    .btn.primary:hover {
-      opacity: .85;
-    }
-
-    .btn.secondary {
-      background: transparent;
-      border: 1px solid #333;
-      color: #fff;
-    }
-
-    .visual {
-      background: linear-gradient(145deg, #1a1a1a, #0b0b0b);
-      border-radius: 28px;
-      height: 360px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 30px 80px rgba(0,0,0,.6);
-    }
-
-    .visual span {
-      font-size: 120px;
-      color: var(--red);
-    }
-
-    /* ---------- SECTION ---------- */
-    section {
-      padding: 100px 0;
-    }
-
-    .center {
-      text-align: center;
-      max-width: 720px;
-      margin: auto;
-    }
-
-    h2 {
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      font-weight: 700;
-    }
-
-    section p {
-      margin-top: 20px;
-      color: var(--muted);
-      font-size: 18px;
-    }
-
-    /* ---------- FEATURES ---------- */
-    .grid {
-      margin-top: 60px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-    }
-
-    .card {
-      background: var(--card);
-      padding: 32px;
-      border-radius: 20px;
-      border: 1px solid #1f1f1f;
-      transition: transform .2s ease, border .2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: var(--red);
-    }
-
-    .icon {
-      font-size: 36px;
-      margin-bottom: 16px;
-      color: var(--red);
-    }
-
-    .card h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    /* ---------- WHY ---------- */
-    .split {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 60px;
-      align-items: center;
-    }
-
-    ul {
-      list-style: none;
-      margin-top: 30px;
-    }
-
-    ul li {
-      margin-bottom: 14px;
-      font-size: 18px;
-    }
-
-    blockquote {
-      background: linear-gradient(145deg, #1a1a1a, #0b0b0b);
-      padding: 40px;
-      border-radius: 24px;
-      font-size: 22px;
-      box-shadow: 0 20px 60px rgba(0,0,0,.5);
-    }
-
-    /* ---------- FINAL CTA ---------- */
-    .final {
-      text-align: center;
-      padding: 120px 24px;
-      background: radial-gradient(circle at center, #1a1a1a 0%, #050505 60%);
-    }
-
-    footer {
-      padding: 40px 0;
-      text-align: center;
-      color: #666;
-      font-size: 14px;
-      border-top: 1px solid #1f1f1f;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        padding: 70px 0;
-      }
-    }
-  </style>
+/* ---------- FOOTER ---------- */
+footer{
+  padding:40px 0;
+  text-align:center;
+  color:#666;
+  border-top:1px solid #1f1f1f;
+}
+</style>
 </head>
 <body>
 
-  <div class="container">
-    <!-- HERO -->
-    <header>
-      <div class="hero">
-        <div class="badge">Voice-First Social Media</div>
-        <h1>Social media.<br><span>Only your voice.</span></h1>
-        <p>
-          Redio is a voice-only social platform where people share thoughts,
-          stories, and conversations — without cameras, filters, or text.
-        </p>
-        <div class="cta">
-          <button class="btn primary">Join the Waitlist</button>
-          <button class="btn secondary">How it Works</button>
-        </div>
-      </div>
-
-      <div class="visual">
-        <span>🎙️</span>
-      </div>
-    </header>
-
-    <!-- PROBLEM -->
-    <section>
-      <div class="center">
-        <h2>The internet forgot how to listen</h2>
-        <p>
-          Social platforms reward performance, speed, and appearance.
-          Real expression gets lost. Redio slows things down —
-          bringing back emotion, tone, and human connection.
-        </p>
-      </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section>
-      <div class="grid">
-        <div class="card">
-          <div class="icon">🎤</div>
-          <h3>Record & Post</h3>
-          <p>Share short voice posts instantly. No typing. No visuals.</p>
-        </div>
-
-        <div class="card">
-          <div class="icon">🎧</div>
-          <h3>Scroll & Listen</h3>
-          <p>A feed designed for listening, not skimming.</p>
-        </div>
-
-        <div class="card">
-          <div class="icon">💬</div>
-          <h3>Voice Replies</h3>
-          <p>Reply and react using your voice — conversations feel real again.</p>
-        </div>
-
-        <div class="card">
-          <div class="icon">📻</div>
-          <h3>Subscribe</h3>
-          <p>Follow voices you resonate with, not faces you scroll past.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHY -->
-    <section>
-      <div class="split">
-        <div>
-          <h2>Why Redio?</h2>
-          <ul>
-            <li>• No pressure to look good</li>
-            <li>• No endless typing or editing</li>
-            <li>• More authenticity and nuance</li>
-            <li>• Built for thinkers, creators, and listeners</li>
-          </ul>
-        </div>
-
-        <blockquote>
-          “Redio feels like the early internet —
-          personal, raw, and human.”
-          <br><br>
-          <span style="color:#888;font-size:16px;">— Early concept feedback</span>
-        </blockquote>
-      </div>
-    </section>
+<div class="container">
+<header>
+  <div class="hero">
+    <div class="badge">Voice-First Social Media</div>
+    <h1>Social media.<br><span>Only your voice.</span></h1>
+    <p>Redio is a voice-only social platform where people share thoughts, stories, and conversations — without cameras or text.</p>
+    <div class="cta">
+      <button class="btn" onclick="openModal()">Join the Waitlist</button>
+    </div>
   </div>
 
-  <!-- FINAL CTA -->
-  <div class="final">
-    <h2>Be heard. Not seen.</h2>
-    <p style="max-width:600px;margin:20px auto;">
-      Redio is building the next generation of social —
-      slower, deeper, voice-led.
-    </p>
-    <button class="btn primary" style="margin-top:30px;">Get Early Access</button>
+  <div class="visual">
+    <div class="wave">
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="center">
+    <h2>The internet forgot how to listen</h2>
+    <p>Redio slows things down — bringing back emotion, tone, and real human presence through voice.</p>
+  </div>
+</section>
+
+<section>
+  <div class="grid">
+    <div class="card"><div class="icon">🎤</div><h3>Record & Post</h3><p>Instant voice posts.</p></div>
+    <div class="card"><div class="icon">🎧</div><h3>Scroll & Listen</h3><p>A feed made for ears.</p></div>
+    <div class="card"><div class="icon">💬</div><h3>Voice Replies</h3><p>Real conversations.</p></div>
+    <div class="card"><div class="icon">📻</div><h3>Subscribe</h3><p>Follow voices, not faces.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="center">
+    <h2>Preview Redio</h2>
   </div>
 
-  <footer>
-    © 2025 Redio — Voice First Social Media
-  </footer>
+  <div class="preview-grid">
+    <div class="phone">
+      <div class="screen">
+        <div class="voice-pill"><div class="pulse"></div>“Late night thoughts…”</div>
+        <div class="voice-pill"><div class="pulse"></div>“Startup failures nobody talks about”</div>
+      </div>
+    </div>
+
+    <div class="phone">
+      <div class="screen">
+        <div class="voice-pill"><div class="pulse"></div>Replying with voice</div>
+        <div class="voice-pill"><div class="pulse"></div>Subscribed to @founderdiaries</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="split">
+    <div>
+      <h2>Why Redio?</h2>
+      <ul>
+        <li>• No pressure to look good</li>
+        <li>• No performance anxiety</li>
+        <li>• More authenticity</li>
+        <li>• Built for thinkers & listeners</li>
+      </ul>
+    </div>
+    <blockquote>
+      “Redio feels like the early internet — personal, raw, and human.”
+      <br><br><span style="font-size:16px;color:#888">— Early feedback</span>
+    </blockquote>
+  </div>
+</section>
+</div>
+
+<footer>© 2025 Redio — Voice First Social Media</footer>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <h3>Join the Waitlist</h3>
+    <p style="color:#aaa;margin-top:10px">Be the first to hear Redio.</p>
+    <input type="email" placeholder="Enter your email" />
+    <button class="btn">Notify Me</button>
+    <div class="close" onclick="closeModal()">Close</div>
+  </div>
+</div>
+
+<script>
+function openModal(){document.getElementById('modal').style.display='flex'}
+function closeModal(){document.getElementById('modal').style.display='none'}
+</script>
 
 </body>
 </html>
